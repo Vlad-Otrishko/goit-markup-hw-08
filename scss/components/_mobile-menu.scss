@@ -1,0 +1,79 @@
+.mobile-menu {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: var(--general-light-font-color);
+  transform: scale(0.7);
+  opacity: 0;
+  //   visibility: hidden;
+  pointer-events: none;
+  // прокрутка нужна если размер меню по макету (480 х 796) больше фактического экрана телефона
+  // иначе нижние элементы меню становятся недоступными.
+  overflow: scroll;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), opacity 500ms,
+    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  &.is-open {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: auto;
+  }
+  &__list {
+    margin-bottom: 302px;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+  // Значения размера шрифта вычисляются от ширины вьюпорта для обеспечения
+  //  масштабирования в мобильном меню
+  &__link {
+    @include font(
+      var(--main-font-family),
+      500,
+      calc(40 * 100vw / 480),
+      1.18,
+      0.02em,
+      var(--secondary-font-color)
+    );
+    // &--current {
+    //   color: var(--accent-color);
+    //   padding-top: 2px;
+    //   padding-bottom: 2px;
+    // }
+  }
+  &__contact-data {
+    display: block;
+    margin-bottom: 64px;
+  }
+  &__contact-item {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+  &__phone {
+    @include font(
+      var(--main-font-family),
+      500,
+      calc(34 * 100vw / 480),
+      1.18,
+      0.02em,
+      var(--accent-color)
+    );
+  }
+  &__mail {
+    @include font(
+      var(--main-font-family),
+      500,
+      calc(24 * 100vw / 480),
+      1.16,
+      0.02em,
+      var(--main-font-color)
+    );
+  }
+}

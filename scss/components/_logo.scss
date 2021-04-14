@@ -1,0 +1,46 @@
+.logo {
+  display: block;
+  @include font(
+    var(--secondary-font-family),
+    var(--secondary-font-weight),
+    24px,
+    1.17,
+    0.03em,
+    var(--accent-color)
+  );
+  &__second-word {
+    color: var(--general-dark-font-color);
+    &--dark-theme {
+      color: var(--general-light-font-color);
+    }
+  }
+}
+.footer__logo {
+  display: block;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin-right: 88px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logo {
+    @include font(
+      var(--secondary-font-family),
+      var(--secondary-font-weight),
+      26px,
+      1.19,
+      0.03em,
+      var(--accent-color)
+    );
+  }
+  .header__logo {
+    margin-right: 93px;
+  }
+  .footer__logo {
+    text-align: left;
+  }
+}

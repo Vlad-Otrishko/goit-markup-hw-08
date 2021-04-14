@@ -1,0 +1,62 @@
+.social-network {
+  display: flex;
+  &--icon-style {
+    justify-content: center;
+  }
+  // Модификатор --text-style для социальных ссылок в виде текста
+  &--text-style {
+    justify-content: start;
+  }
+  &__item {
+    &--text-style {
+      display: block;
+      &:nth-child(-n + 3) {
+        padding-right: calc(10 * 100vw / 480);
+        margin-right: calc(10 * 100vw / 480);
+        // Отзывчивые (резиновые) пэддинги и марджины для масштабирования в мобильном меню
+        border-right: 1px solid rgba(33, 33, 33, 0.2);
+      }
+    }
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &__link {
+    &--icon-style {
+      display: flex;
+      width: 44px;
+      height: 44px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: var(--icon-social-link-color);
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      .footer & {
+        margin-bottom: 60px;
+        color: var(--general-light-font-color);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      &:hover,
+      &:focus {
+        background-color: var(--accent-color);
+        .members & {
+          color: var(--general-light-font-color);
+        }
+      }
+    }
+    &--text-style {
+      @include font(
+        var(--main-font-family),
+        500,
+        calc(18 * 100vw / 480),
+        1.22,
+        0.02em,
+        var(--accent-color)
+      );
+    }
+  }
+  &__icon {
+    fill: currentColor;
+  }
+}

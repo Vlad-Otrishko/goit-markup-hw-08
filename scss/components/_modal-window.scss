@@ -1,0 +1,40 @@
+.modal-window {
+  display: block;
+  width: 450px;
+  height: 609px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 41px;
+  padding-right: 39px;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  background: var(--general-light-font-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms;
+  .motivation {
+    display: block;
+    margin-bottom: 12px;
+    text-align: center;
+    @include font(
+      var(--main-font-family),
+      var(--secondary-font-weight),
+      20px,
+      1.15,
+      0.03em,
+      var(--secondary-font-color)
+    );
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-window {
+    width: 528px;
+    height: 581px;
+  }
+}

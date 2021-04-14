@@ -1,0 +1,48 @@
+.title {
+  @include font(
+    var(--main-font-family),
+    var(--secondary-font-weight),
+    28px,
+    1.18,
+    0.03em,
+    var(--secondary-font-color)
+  );
+  text-align: center;
+}
+
+.hero__title {
+  @include font(var(--main-font-family), 900, 26px, 1.62, 0.06em, var(--general-light-font-color));
+  text-transform: uppercase;
+}
+.members__title {
+  margin: 0 auto 30px;
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+    @include font(
+      var(--main-font-family),
+      var(--secondary-font-weight),
+      36px,
+      1.17,
+      0.03em,
+      var(--secondary-font-color)
+    );
+  }
+  .hero__title {
+    @include font(
+      var(--main-font-family),
+      900,
+      44px,
+      1.37,
+      0.06em,
+      var(--general-light-font-color)
+    );
+  }
+  .options__title {
+    margin: 0 auto 50px;
+  }
+  .members__title {
+    margin: 0 auto 50px;
+  }
+}
