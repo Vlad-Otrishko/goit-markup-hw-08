@@ -41,11 +41,11 @@
       0.02em,
       var(--secondary-font-color)
     );
-    // &--current {
-    //   color: var(--accent-color);
-    //   padding-top: 2px;
-    //   padding-bottom: 2px;
-    // }
+    &--current {
+      color: var(--accent-color);
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
   }
   &__contact-data {
     display: block;

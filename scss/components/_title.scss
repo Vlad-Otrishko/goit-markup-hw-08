@@ -14,10 +14,28 @@
   @include font(var(--main-font-family), 900, 26px, 1.62, 0.06em, var(--general-light-font-color));
   text-transform: uppercase;
 }
+.feature__title {
+  margin-bottom: 10px;
+  @include font(
+    var(--main-font-family),
+    var(--secondary-font-weight),
+    var(--main-font-size),
+    1.14,
+    0.03em,
+    var(--secondary-font-color)
+  );
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .members__title {
   margin: 0 auto 30px;
 }
-
+@media screen and (min-width: 768px) {
+  .feature__title {
+    text-align: left;
+  }
+}
 @media screen and (min-width: 1200px) {
   .title {
     @include font(

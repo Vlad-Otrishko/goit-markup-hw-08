@@ -73,7 +73,6 @@ body {
 .container {
   padding-left: 15px;
   padding-right: 15px;
-  margin: 0 auto;
 }
 
 .header__container {
@@ -96,6 +95,7 @@ body {
 @media screen and (min-width: 480px) {
   .container {
     width: 480px;
+    margin: 0 auto;
   }
   .hero__container {
     padding-left: 60px;
@@ -323,8 +323,26 @@ body {
   text-transform: uppercase;
 }
 
+.feature__title {
+  margin-bottom: 10px;
+  font-family: var(--main-font-family);
+  font-weight: var(--secondary-font-weight);
+  font-size: var(--main-font-size);
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--secondary-font-color);
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .members__title {
   margin: 0 auto 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .feature__title {
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -358,7 +376,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 94px 15px;
   opacity: 1;
+  overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.2);
   -webkit-transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -377,11 +397,9 @@ body {
 
 .modal-window {
   display: block;
-  width: 450px;
-  height: 609px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  width: 100%;
+  height: auto;
+  position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 41px;
@@ -389,8 +407,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transform: translate(-50%, -50%) scale(1) rotate(0);
-          transform: translate(-50%, -50%) scale(1) rotate(0);
   background: var(--general-light-font-color);
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -412,6 +428,18 @@ body {
   letter-spacing: 0.03em;
   color: var(--secondary-font-color);
   text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+  .modal-window {
+    position: absolute;
+    width: 450px;
+    height: 609px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(1) rotate(0);
+            transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -872,6 +900,12 @@ textarea.modal-form__input {
   color: var(--secondary-font-color);
 }
 
+.mobile-menu__link--current {
+  color: var(--accent-color);
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
 .mobile-menu__contact-data {
   display: block;
   margin-bottom: 64px;
@@ -966,7 +1000,7 @@ textarea.modal-form__input {
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-size: 18px;
-  line-height: 1.56;
+  line-height: 1.55;
   letter-spacing: 0.03em;
   color: var(--general-light-font-color);
   background-color: rgba(33, 150, 243, 0.9);
@@ -1022,7 +1056,7 @@ textarea.modal-form__input {
 }
 
 .project__img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -1191,6 +1225,22 @@ textarea.modal-form__input {
   /* цвет текста */
 }
 
+@media screen and (max-width: 1199px) {
+  .signup-form {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .signup-form__input {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 20px;
+  }
+  .signup-form__input-wrapper {
+    display: block;
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .signup-form {
     margin-left: auto;
@@ -1198,21 +1248,6 @@ textarea.modal-form__input {
   .signup-form__input {
     margin-right: 12px;
     width: 358px;
-  }
-}
-
-@media screen and (max-width: 1199px) {
-  .signup-form {
-    margin: 0 auto;
-    width: 100%;
-  }
-  .signup-form__input {
-    margin: 0 auto 20px;
-    width: 450px;
-  }
-  .signup-form__input-wrapper {
-    display: block;
-    width: 100%;
   }
 }
 /*# sourceMappingURL=portfolio.css.map */

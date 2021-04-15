@@ -15,19 +15,6 @@
     background-color: var(--modal-button-color);
     border-radius: 4px;
   }
-  &__title {
-    margin-bottom: 10px;
-    @include font(
-      var(--main-font-family),
-      var(--secondary-font-weight),
-      var(--main-font-size),
-      1.14,
-      0.03em,
-      var(--secondary-font-color)
-    );
-    text-align: center;
-    text-transform: uppercase;
-  }
   &__contents {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -35,6 +22,12 @@
     letter-spacing: 0.03em;
   }
 }
+@media screen and (max-width: 767px) {
+  .feature:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .features-set {
     width: 100%;
