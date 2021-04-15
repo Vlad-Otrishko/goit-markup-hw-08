@@ -588,9 +588,10 @@ textarea.modal-form__input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  white-space: nowrap;
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
-  font-size: 12px;
+  font-size: calc(12 * 100vw / 480);
   line-height: 1.66;
   letter-spacing: 0.03em;
   color: var(--main-font-color);
@@ -599,6 +600,8 @@ textarea.modal-form__input {
 
 .modal-form__checkbox-label::before {
   display: inline-block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   content: '';
   width: 16px;
   height: 15px;
@@ -621,6 +624,17 @@ textarea.modal-form__input {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media screen and (min-width: 480px) {
+  .modal-form__checkbox-label {
+    font-family: var(--main-font-family);
+    font-weight: var(--main-font-weight);
+    font-size: 12px;
+    line-height: 1.66;
+    letter-spacing: 0.03em;
+    color: var(--main-font-color);
+  }
 }
 
 @media screen and (min-width: 1200px) {
